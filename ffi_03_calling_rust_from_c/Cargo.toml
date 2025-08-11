@@ -1,0 +1,12 @@
+[package]
+name = "ffi_03_calling_rust_from_c"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = [
+    "cdylib", # compile Rust code as a shared library
+    # "staticlib" # compile Rust code as a static library
+]
+
+[dependencies]

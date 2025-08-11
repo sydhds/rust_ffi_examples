@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "ffi_01_basic_snappy_binding",
+    "ffi_02_basic_snappy_binding",
+    "ffi_03_calling_rust_from_c", 
+    "ffi_04_rust_callbacks",
+    "ffi_05_rust_callbacks_02",
+    "ffi_06_foreign_globals"
+]
+resolver = "2"
+
+[workspace.dependencies]
+libc = "0.2"

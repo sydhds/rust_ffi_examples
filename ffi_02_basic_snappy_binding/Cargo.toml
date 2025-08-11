@@ -1,0 +1,10 @@
+[package]
+name = "ffi_02_basic_snappy_binding"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+libc.workspace = true
+
+[build-dependencies]
+pkg-config = "0.3"
