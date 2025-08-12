@@ -51,6 +51,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "ffi_07_variadic_functions"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
+name = "ffi_08_opaque_structs"
+version = "0.1.0"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.175"
 source = "registry+https://github.com/rust-lang/crates.io-index"

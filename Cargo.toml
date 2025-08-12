@@ -5,7 +5,9 @@ members = [
     "ffi_03_calling_rust_from_c", 
     "ffi_04_rust_callbacks",
     "ffi_05_rust_callbacks_02",
-    "ffi_06_foreign_globals"
+    "ffi_06_foreign_globals",
+    "ffi_07_variadic_functions",
+    "ffi_08_opaque_structs",
 ]
 resolver = "2"
 

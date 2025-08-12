@@ -1,0 +1,13 @@
+[package]
+name = "ffi_08_opaque_structs"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = [
+    # "cdylib", # compile Rust code as a shared library
+    "staticlib" # compile Rust code as a static library
+]
+
+[dependencies]
+libc.workspace = true

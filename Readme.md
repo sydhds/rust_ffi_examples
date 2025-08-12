@@ -9,6 +9,9 @@
 * [ffi_03_calling_rust_from_c](#ffi_03_calling_rust_from_c): call a basic Rust function from C
 * [ffi_04_rust_callbacks](#ffi_04_rust_callbacks)
 * [ffi_05_rust_callbacks_02](#ffi_05_rust_callbacks_02): register and call a Rust function as a callback in C
+* [ffi_06_foreign_globals](#ffi_06_foreign_globals): access global variables in C from Rust
+* [ffi_07_variadic_functions](#ffi_07_variadic_functions): call a C variadic function from Rust 
+* [ffi_08_opaque_structs](#ffi_08_opaque_structs): Use an opaque struct (defined in Rust lib) in C
 
 ### ffi_01_snappy_binding
 
@@ -68,3 +71,33 @@ Compile C library:
 
 Compile Rust:
 * cargo build
+
+### ffi_06_foreign_globals
+
+Access global variables in C lib readline from Rust (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#accessing-foreign-globals))
+
+Setup:
+* sudo apt install pkg-config libreadline-dev
+
+* cargo run
+
+### ffi_07_variadic_functions
+
+Use a [C variadic function](https://en.cppreference.com/w/c/variadic.html) from Rust
+
+* cargo run
+
+### ffi_08_opaque_structs
+
+Define an opaque struct in Rust lib (FileData) and use it in C.
+Based on [rust ffi wrong way blog post](https://www.ralphminderhoud.com/blog/rust-ffi-wrong-way/)
+
+Compile Rust library:
+* cargo build
+* ll ../target/debug//libffi_08*
+
+Compile C binary:
+* cd resources
+* gcc -Wall api_1.c -o api_1 -lffi_08_opaque_structs -L../../target/debug 
+* ./api_1
+
