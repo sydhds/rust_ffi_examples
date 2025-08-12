@@ -1,6 +1,6 @@
 #[unsafe(no_mangle)]
 extern "C" fn rusty_cb(a: i32) {
-    println!("I'm a Rust function called from C with value {0}", a);
+    println!("I'm a Rust function called from C with value {a}");
 }
 
 /*

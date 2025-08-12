@@ -8,6 +8,8 @@ use libc::{c_int, size_t};
  * https://users.rust-lang.org/t/ffi-with-structured-enums-in-rust/111027
  */
 
+#[allow(non_camel_case_types)]
+#[allow(clippy::upper_case_acronyms)]
 #[derive(PartialEq, Eq, Debug)]
 #[non_exhaustive]
 enum SnappyStatus {
@@ -111,7 +113,7 @@ pub fn uncompress(src: &[u8]) -> Option<Vec<u8>> {
 
 fn main() {
     let x = unsafe { snappy_max_compressed_length(100) };
-    println!("max compressed length of a 100 byte buffer: {}", x);
+    println!("max compressed length of a 100 byte buffer: {x}");
 }
 
 #[cfg(test)]

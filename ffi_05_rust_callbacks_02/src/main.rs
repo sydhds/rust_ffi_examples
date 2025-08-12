@@ -5,7 +5,7 @@ struct RustObject {
 }
 
 unsafe extern "C" fn callback(target: *mut RustObject, a: i32) {
-    println!("I'm called from C with value {0}", a);
+    println!("I'm called from C with value {a}");
 
     // Note: Removing the unsafe block makes the compiler prints some explanations:
     // raw pointers may be null, dangling or unaligned;

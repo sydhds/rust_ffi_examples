@@ -9,8 +9,11 @@ unsafe extern "C" {
 
 fn main() {
 
-    println!("You have readline version {} installed.",
-             unsafe { rl_readline_version as i32 });
+    #[allow(clippy::unnecessary_cast)]
+    {
+        println!("You have readline version {} installed.",
+                 unsafe { rl_readline_version as i32 });
+    }
 
 
     let prompt = CString::new("[my-awesome-shell] $").unwrap();
@@ -18,7 +21,7 @@ fn main() {
     #[allow(static_mut_refs)]
     unsafe {
         rl_prompt = prompt.as_ptr();
-        println!("{:?}", rl_prompt);
+        println!("{rl_prompt:?}");
         rl_prompt = ptr::null();
     }
 

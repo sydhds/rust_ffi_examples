@@ -78,7 +78,7 @@ pub fn uncompress(src: &[u8]) -> Option<Vec<u8>> {
 
 fn main() {
     let x = unsafe { snappy_max_compressed_length(100) };
-    println!("max compressed length of a 100 byte buffer: {}", x);
+    println!("max compressed length of a 100 byte buffer: {x}");
 }
 
 #[cfg(test)]

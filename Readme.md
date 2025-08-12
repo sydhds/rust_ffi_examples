@@ -4,7 +4,13 @@
 
 ## Examples
 
-### ffi_01_snappy_binding_01
+* [ffi_01_snappy_binding](#ffi_01_snappy_binding): call C from Rust
+* [ffi_02_snappy_binding](#ffi_02_snappy_binding)
+* [ffi_03_calling_rust_from_c](#ffi_03_calling_rust_from_c): call a basic Rust function from C
+* [ffi_04_rust_callbacks](#ffi_04_rust_callbacks)
+* [ffi_05_rust_callbacks_02](#ffi_05_rust_callbacks_02): register and call a Rust function as a callback in C
+
+### ffi_01_snappy_binding
 
 Call C function from Rust ([Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#calling-foreign-functions)).
 This example is calling functions from the C library [snappy](https://github.com/google/snappy).
@@ -21,7 +27,7 @@ Same as rust_ffi_snappy_binding_01 but dealing with an enum as a return type.
 
 ### ffi_03_calling_rust_from_c
 
-Call a very simple Rust function from C (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#calling-rust-code-from-c)
+Call a basic Rust function from C (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#calling-rust-code-from-c))
 
 Compile Rust library:
 * cargo build
@@ -35,7 +41,7 @@ Compile C binary:
 
 ### ffi_04_rust_callbacks
 
-Register and call a Rust function as a callback (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#callbacks-from-c-code-to-rust-functions)
+Register and call a Rust function as a callback (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#callbacks-from-c-code-to-rust-functions))
 
 Note: this is a simplified example (Calling Rust callbacks from C binary)
 
@@ -53,7 +59,7 @@ Compile C binary:
 
 Same as ffi_04_rust_callbacks but:
 * Using a struct `RustOjbect` in the callback function
-* Use Rust code to call the C library that use a Rust function as a callback
+* Use Rust code to call the C library that uses a Rust function as a callback
 
 Compile C library:
 * cd resources
