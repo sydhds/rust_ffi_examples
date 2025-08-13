@@ -52,7 +52,7 @@ pub unsafe extern "C" fn file_data_set_field4(f: *mut FileData, value: u8) {
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn file_data_set_field4_v2(f: Option<& mut FileData>, value: u8) {
+pub unsafe extern "C" fn file_data_set_field4_v2(f: Option<&mut FileData>, value: u8) {
     f.map(|f| f.set_field4(value));
 }
 

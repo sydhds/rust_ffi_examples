@@ -8,6 +8,7 @@ members = [
     "ffi_06_foreign_globals",
     "ffi_07_variadic_functions",
     "ffi_08_opaque_structs",
+    "ffi_09_opaque_structs_02",
 ]
 resolver = "2"
 
