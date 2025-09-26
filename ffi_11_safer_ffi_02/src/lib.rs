@@ -33,7 +33,9 @@ fn cuint256_debug(cu: Option<&CUint256>) {
 fn cuint256_format(cu: Option<&CUint256>) -> char_p::Box {
     // From https://github.com/getditto/safer_ffi/blob/310a2c94c39e41335f5261724e733cd036a06629/ffi_tests/src/lib.rs
     let s = format!("{:?}", cu);
-    s.try_into().unwrap()
+    s
+        .try_into()
+        .unwrap()
 }
 
 // Note: char_p::Box in C will translate to char * but it should not be freed with C free() function

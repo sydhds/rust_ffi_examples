@@ -515,6 +515,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ffi_12_safer_ffi_03"
+version = "0.1.0"
+dependencies = [
+ "safer-ffi",
+]
+
+[[package]]
 name = "find-msvc-tools"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -11,6 +11,7 @@ members = [
     "ffi_09_opaque_structs_02",
     "ffi_10_safer_ffi_01",
     "ffi_11_safer_ffi_02",
+    "ffi_12_safer_ffi_03",
 ]
 resolver = "2"
 
