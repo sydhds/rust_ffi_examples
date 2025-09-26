@@ -1,4 +1,10 @@
 target
 
+# C bin & headers
+ffi_10_safer_ffi_01/resources/main
+ffi_10_safer_ffi_01/*.h
+ffi_11_safer_ffi_02/resources/main
+ffi_11_safer_ffi_02/*.h
+
 # IDE
 .idea

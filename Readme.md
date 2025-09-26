@@ -12,6 +12,9 @@
 * [ffi_06_foreign_globals](#ffi_06_foreign_globals): access global variables in C from Rust
 * [ffi_07_variadic_functions](#ffi_07_variadic_functions): call a C variadic function from Rust 
 * [ffi_08_opaque_structs](#ffi_08_opaque_structs): Use an opaque struct (defined in Rust lib) in C
+* [ffi_09_opaque_structs_02](#ffi_09_opaque_structs_02): Use an opaque struct (defined in C lib) in Rust
+* [ffi_10_safer_ffi_01](#ffi_10_safer_ffi_01): Use safer_ffi crate - basic example
+* [ffi_11_safer_ffi_02](#ffi_11_safer_ffi_02): Define an opaque struct in Rust using safer_ffi crate. Use it in C.   
 
 ### ffi_01_snappy_binding
 
@@ -74,7 +77,7 @@ Compile Rust:
 
 ### ffi_06_foreign_globals
 
-Access global variables in C lib readline from Rust (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#accessing-foreign-globals))
+Access global variables in C lib [readline](https://en.wikipedia.org/wiki/GNU_Readline) from Rust (from [Nomicon ffi](https://doc.rust-lang.org/nomicon/ffi.html#accessing-foreign-globals))
 
 Setup:
 * sudo apt install pkg-config libreadline-dev
@@ -91,6 +94,7 @@ Use a [C variadic function](https://en.cppreference.com/w/c/variadic.html) from 
 
 Define an opaque struct in Rust lib (FileData) and use it in C.
 Based on [rust ffi wrong way blog post](https://www.ralphminderhoud.com/blog/rust-ffi-wrong-way/)
+Note that this example use Null pointer optimization, see functions: `file_data_set_field4` && `file_data_set_field4_v2`
 
 Compile Rust library:
 * cargo build
@@ -100,4 +104,44 @@ Compile C binary:
 * cd resources
 * gcc -Wall api_1.c -o api_1 -lffi_08_opaque_structs -L../../target/debug 
 * ./api_1
+
+### ffi_09_opaque_structs_02
+
+Define an opaque struct in C library and use it in Rust. 
+Based on [blog post](https://avivg.github.io/blog/2023/02/25/rust__ffi_opaque.html)
+
+### ffi_10_safety_ffi_01
+
+Compile Rust library:
+* cargo build
+* ll ../target/debug//libffi_10_safer_ffi_01*
+
+Generate C headers:
+* cd ffi_10_safer_ffi_01/resources
+* cargo run --features headers --bin generate-headers
+* mv -v rust_points.h resources/
+
+Compile C binary:
+* cd resources
+* gcc -Wall main.c -o main -lffi_10_safer_ffi_01 -L../../target/debug
+
+### ffi_11_safety_ffi_02
+
+Compile Rust library:
+* cd ffi_11_safer_ffi_02
+* cargo build
+* ll ../target/debug//libffi_11_safer_ffi_02*
+
+Generate C headers:
+* cd ffi_11_safer_ffi_02
+* cargo run --features headers --bin generate-headers
+* mv -v big_values.h resources/
+
+Compile C binary:
+* cd resources
+* gcc -Wall main.c -o main -lffi_11_safer_ffi_02 -L../../target/debug
+
+
+
+
 

@@ -2,6 +2,7 @@ use std::ffi::CStr;
 use std::path::{Path, PathBuf};
 use std::io::{Error, Read};
 
+// No need for `#[repr(C)]` here, since we want to use an opaque struct
 // #[repr(C)]
 #[derive(Debug)]
 pub struct FileData {
@@ -40,7 +41,9 @@ impl FileData {
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn file_data_new() -> *mut FileData {
     // Heap allocated new `FileData` with default values
-    Box::into_raw(Box::new(FileData::new()))
+    let fd = Box::new(FileData::new());
+    // Turn FileData into a raw pointer
+    Box::into_raw(fd)
 }
 
 #[unsafe(no_mangle)]

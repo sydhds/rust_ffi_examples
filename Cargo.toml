@@ -9,6 +9,8 @@ members = [
     "ffi_07_variadic_functions",
     "ffi_08_opaque_structs",
     "ffi_09_opaque_structs_02",
+    "ffi_10_safer_ffi_01",
+    "ffi_11_safer_ffi_02",
 ]
 resolver = "2"
 
